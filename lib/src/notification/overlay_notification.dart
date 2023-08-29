@@ -77,11 +77,11 @@ OverlaySupportEntry showSimpleNotification(
   /**
    * The background color for notification, default to [ColorScheme.secondary].
    */
-  Color? background,
+  required Color background,
   /**
    * See more [ListTileTheme.textColor],[ListTileTheme.iconColor].
    */
-  Color? foreground,
+  required Color foreground,
   /**
    * The elevation of notification, see more [Material.elevation].
    */
@@ -116,16 +116,14 @@ OverlaySupportEntry showSimpleNotification(
         direction: dismissDirection,
         key: ValueKey(key),
         child: Material(
-          color: background ?? Theme.of(context).colorScheme.secondary,
+          color: background,
           elevation: elevation,
           child: SafeArea(
               bottom: position == NotificationPosition.bottom,
               top: position == NotificationPosition.top,
               child: ListTileTheme(
-                textColor:
-                    foreground ?? Theme.of(context).colorScheme.onSecondary,
-                iconColor:
-                    foreground ?? Theme.of(context).colorScheme.onSecondary,
+                textColor: foreground,
+                iconColor: foreground,
                 child: ListTile(
                   leading: leading,
                   title: content,

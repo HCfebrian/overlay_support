@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
               showSimpleNotification(
                 Text('this is a message from simple notification'),
                 background: Colors.green,
+                foreground: Colors.yellow
               );
             },
             child: Text(
